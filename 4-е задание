@@ -1,0 +1,130 @@
+#111111
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+i = a
+while i <= b:
+    print(i)
+    i += 1
+
+#22222
+
+def print_range(a, b):
+    step = 1 if a < b else -1
+    for i in range(a, b + step, step):
+        print(i)
+
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+print_range(a, b)
+
+#33333
+
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+start = min(a, b)
+end = max(a, b)
+
+for i in range(start, end + 1):
+    if i % 2 != 0:
+        print(i)
+
+#4444
+
+n = int(input("Введите количество чисел для сложения: "))
+
+total = 0
+for i in range(1, n + 1):
+    number = int(input(f"Введите {i}-е число: "))
+    total += number
+
+print(f"Сумма введённых чисел: {total}")
+
+#5555
+
+a = int(input("Введите число для вычисления суммы кубов: "))
+
+sum = 0
+for i in range(1, a + 1):
+    sum += i ** 3
+
+print(sum)
+
+#6666
+
+def f(a):
+    f = 1
+    for i in range(1, a + 1):
+        f *= i
+    return f
+
+a = int(input("Введите число для получения факториала: "))
+print(f(a))
+
+#7777
+
+n = int(input("Введите число: "))
+
+s = 0
+f = 1
+i = 1
+while i <= n:
+    f *= i
+    s += f
+    i += 1
+
+print("Сумма факториалов от 1! до", n, "! =", s)
+
+#8888
+
+num = int(input("Введите число (до 9): "))
+
+print("Лесенка чисел:")
+
+count = 1
+while count <= num:
+    for x in range(1, count + 1):
+        print(x, end="")
+    print()
+    count += 1
+
+#999
+
+count = int(input("Сколько чисел Фибоначчи просуммировать? "))
+
+x1 = 0
+x2 = 1
+total = 0
+i = 0
+
+while i < count:
+    total = total + x1
+    temp = x1 + x2
+    x1 = x2
+    x2 = temp
+    i += 1
+
+print("Сумма первых", count, "чисел Фибоначчи =", total)
+
+#1010
+
+total = 0
+first = 0
+second = 1
+
+amount = int(input("Введите количество чисел из ряда Фибоначчи: "))
+start = int(input("Введите с какого числа начать отсчет: "))
+
+index = 1
+count = 0
+
+while count < start + amount:
+    if index > start:
+        total += first
+    first, second = second, first + second
+    count += 1
+    index += 1
+
+print("Сумма выбранных чисел Фибоначчи =", total)
