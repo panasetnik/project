@@ -1,0 +1,92 @@
+#111
+num = int(input())
+for k in range(1, number + 1):
+    sq = k * k
+    if sq > num:
+        break
+    print(sq)
+
+#2222
+
+num = int(input())
+cur = 2
+while cur <= num:
+    if num % cur == 0:
+        print(cur)
+        break
+    cur += 1
+
+#33333
+
+n = int(input())
+po = 1
+ex = 0
+while po * 2 <= n:
+    po *= 2
+    ex += 1
+
+print(ex, p)
+
+#4444
+
+x = float(input())
+y = float(input())
+
+current = x
+for day in range(1, 1000):  # большой предел на всякий случай
+    if current >= y:
+        print(day)
+        break
+    current *= 1.1
+
+#5555
+
+numbers = []
+while True:
+    num = int(input())
+    if num == 0:
+        break
+    numbers.append(num)
+print(len(numbers))
+
+#66666
+
+total, count = 0, 0
+while (num := int(input())) != 0:
+    total += num
+    count += 1
+print(total / count if count else 0)
+
+#7777
+
+previous = int(input())
+counter = 0
+
+if previous != 0:
+    while True:
+        current = int(input())
+        if current == 0:
+            break
+        if current > previous:
+            counter += 1
+        previous = current
+
+print(counter)
+
+#88888
+
+max_length = 0
+current_length = 0
+prev = None
+
+while (num := int(input())) != 0:
+    if num == prev:
+        current_length += 1
+    else:
+        current_length = 1
+        prev = num
+    
+    if current_length > max_length:
+        max_length = current_length
+
+print(max_length)
