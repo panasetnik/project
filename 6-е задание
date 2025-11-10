@@ -1,0 +1,217 @@
+ #1111
+def words_on_e():
+    s = input("Введи текст: ")
+    c = 0
+    for i in s.split():
+        if i[0].lower() == 'е':
+            c += 1
+    print("Слов, начинающихся на 'е':", c)
+
+words_on_e()
+
+#2222
+
+def change_colon():
+    line = input("Введи текст: ")
+    amount = 0
+    result = ""
+    for ch in line:
+        if ch == ":":
+            result += "%"
+            amount += 1
+        else:
+            result += ch
+    print("Новая строка:", result)
+    print("Всего замен:", amount)
+
+change_colon()
+
+#3333
+
+def remove_dots():
+    line = input("Введи текст: ")
+    print("Без точек:", line.replace(".", ""))
+    print("Удалено символов:", line.count("."))
+
+remove_dots()
+
+#4444
+
+s = input("Введи текст: ")
+changed = s.replace('а', 'о')
+print("Новый текст:", changed)
+print("Букв 'а' заменено:", s.count('а'))
+print("Длина строки:", len(changed))
+
+
+#55555
+
+def to_lower():
+    text = input("Введи какую-нибудь строку: ")
+    result = ""
+    for ch in text:
+        result = result + ch.lower()
+    print("Вот что получилось:", result)
+
+to_lower()
+
+#66666
+
+def delete_a():
+    s = input("Введи текст: ")
+    result = ""
+    deleted = 0
+    for letter in s:
+        if letter != 'а':
+            result += letter
+        else:
+            deleted += 1
+    print("Строка без 'а':", result)
+    print("Удалено букв:", deleted)
+
+delete_a()
+
+#77777
+
+def change_p():
+    line = input("Введи строку: ")
+    half = len(line) // 2
+    part1 = ""
+    for ch in line[:half]:
+        if ch == 'п':
+            part1 += '*'
+        else:
+            part1 += ch
+    final = part1 + line[half:]
+    print("Вот что получилось:", final)
+
+change_p()
+
+#88888
+
+def count_words_no_dot():
+    s = input("Введи текст: ")
+    if s[-1] == '.':
+        s = s[: -1]
+    word_list = s.split()
+    print("Слов в строке:", len(word_list))
+
+count_words_no_dot()
+
+#99999
+
+def count_word():
+    s = input("Введи текст: ")
+    w = input("Введи слово для поиска: ")
+    s = s.lower()
+    w = w.lower()
+    words = s.split()
+    total = 0
+    for word_in_text in words:
+        if word_in_text == w:
+            total += 1
+    print("Найдено вхождений:", total)
+
+count_word()
+
+#10101010
+
+def capitalize_words():
+    sentence = input("Введи предложение: ")
+    result = ""
+    for word in sentence.split():
+        if word:
+            result += word[0].upper() + word[1:].lower() + " "
+    print("Итог:", result.strip())
+
+capitalize_words()
+
+#111111111111111
+
+def process_text():
+    s = input("Введи строку: ")
+    
+    # Заменяем все '!' на '.'
+    changed = ""
+    for ch in s:
+        if ch == "!":
+            changed += "."
+        else:
+            changed += ch
+
+    # Ищем самую длинную последовательность 'н'
+    longest = 0
+    count = 0
+    for ch in s:
+        if ch == "н":
+            count += 1
+            if count > longest:
+                longest = count
+        else:
+            count = 0
+
+    print("Преобразованная строка:", changed)
+    print("Длина максимальной последовательности 'н':", longest)
+
+process_text()
+
+#12121212
+
+def words_ending_with_ya():
+    s = input("Введи строку: ")
+    lst = s.split()
+    total = 0
+    for w in lst:
+        if w[-1] == 'я':
+            print(w)
+            total += 1
+    print("Всего слов на 'я':", total)
+
+words_ending_with_ya()
+
+#1313131313
+
+def extract_brackets():
+    s = input("Введи строку со скобками: ")
+    open_br = -1
+    close_br = -1
+
+    for i in range(len(s)):
+        if s[i] == '(' and open_br == -1:
+            open_br = i
+        elif s[i] == ')' and close_br == -1:
+            close_br = i
+
+    if open_br != -1 and close_br != -1 and close_br > open_br:
+        print("Текст между скобками:", s[open_br+1:close_br])
+    else:
+        print("Скобки не найдены или порядок неверный.")
+
+extract_brackets()
+
+#14141414
+
+def filter_words():
+    s = input("Введи строку: ")
+    word_list = s.split()
+    selected = []
+
+    for w in word_list:
+        if w[0] == 'а' or w[-1] == 'я':
+            selected.append(w)
+
+    print("Слова, которые подходят:", selected)
+
+filter_words()
+
+#15151515
+
+def count_t_letters():
+    s = input("Введи строку: ")
+    total = 0
+    for ch in s:
+        if ch == 'т':
+            total += 1
+    print("Букв 'т' найдено:", total)
+
+count_t_letters()
