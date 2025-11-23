@@ -1,0 +1,335 @@
+# Вариант 1
+print("=== Вариант 1 ===")
+vvod = input("Введите числа через пробел: ")
+chisla = vvod.split()
+dannye = []
+for chislo in chisla:
+    dannye.append(float(chislo))
+
+summa = 0
+for x in dannye:
+    summa = summa + x
+srednee = summa / len(dannye)
+srednee = round(srednee, 1)
+
+noviy_massiv = []
+for element in dannye:
+    if element == 0:
+        noviy_massiv.append(srednee)
+    else:
+        noviy_massiv.append(element)
+
+print("Среднее арифметическое:", srednee)
+print("Новый массив:", noviy_massiv)
+print()
+
+# Вариант 2
+print("=== Вариант 2 ===")
+vvod = input("Введите элементы: ")
+elementi = vvod.split()
+chisla = []
+for el in elementi:
+    chisla.append(int(el))
+
+minimalniy = chisla[0]
+for chislo in chisla:
+    if chislo < minimalniy:
+        minimalniy = chislo
+
+poziciya = 0
+for i in range(len(chisla)):
+    if chisla[i] == minimalniy:
+        poziciya = i
+        break
+
+print("Индекс минимального элемента:", poziciya)
+print()
+
+# Вариант 3
+print("=== Вариант 3 ===")
+vvod = input("Введите элементы массива D: ")
+stroki = vvod.split()
+D = []
+for s in stroki:
+    D.append(float(s))
+
+summa_neparnih = 0
+i = 1
+while i < len(D):
+    summa_neparnih = summa_neparnih + D[i]
+    i = i + 2
+
+print("Массив D:", D)
+print("Сумма элементов с нечётными индексами:", summa_neparnih)
+print()
+
+# Вариант 4
+print("=== Вариант 4 ===")
+vvod = input("Введите элементы: ")
+spisok = vvod.split()
+massiv = []
+for el in spisok:
+    massiv.append(int(el))
+
+maksimalniy = massiv[0]
+for chislo in massiv:
+    if chislo > maksimalniy:
+        maksimalniy = chislo
+
+nomer = 0
+for i in range(len(massiv)):
+    if massiv[i] == maksimalniy:
+        nomer = i
+        break
+
+print("Максимальный элемент:", maksimalniy)
+print("Порядковый номер (индекс):", nomer)
+print()
+
+# Вариант 5
+print("=== Вариант 5 ===")
+vvod = input("Введите 10 элементов массива: ")
+elementi = vvod.split()
+if len(elementi) != 10:
+    print("Ошибка! Нужно ввести ровно 10 элементов.")
+else:
+    arr = []
+    for el in elementi:
+        arr.append(int(el))
+    
+    print("Пары отрицательных чисел, стоящих рядом:")
+    naydeno = False
+    i = 0
+    while i < len(arr) - 1:
+        if arr[i] < 0 and arr[i+1] < 0:
+            print("(", arr[i], ",", arr[i+1], ")")
+            naydeno = True
+        i = i + 1
+    
+    if not naydeno:
+        print("Таких пар нет")
+print()
+
+# Вариант 6
+print("=== Вариант 6 ===")
+vvod = input("Введите 10 элементов: ")
+chisla_str = vvod.split()
+if len(chisla_str) != 10:
+    print("Ошибка! Нужно ввести ровно 10 элементов.")
+else:
+    arr = []
+    for s in chisla_str:
+        arr.append(int(s))
+    
+    summa = 0
+    for x in arr:
+        summa += x
+    srednee = summa / len(arr)
+    
+    menshe = 0
+    for x in arr:
+        if x < srednee:
+            menshe += 1
+    
+    bolshe = 0
+    for x in arr:
+        if x > srednee:
+            bolshe += 1
+    
+    print("Среднее арифметическое:", srednee)
+    print("Количество элементов меньше среднего:", menshe)
+    print("Количество элементов больше среднего:", bolshe)
+print()
+
+# Вариант 7
+print("=== Вариант 7 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(int(el))
+
+summa_chetnih = 0
+i = 0
+while i < len(arr):
+    summa_chetnih = summa_chetnih + arr[i]
+    i = i + 2
+
+proizvedenie_neparnih = 1
+i = 1
+while i < len(arr):
+    proizvedenie_neparnih = proizvedenie_neparnih * arr[i]
+    i = i + 2
+
+print("Сумма элементов с четными индексами:", summa_chetnih)
+print("Произведение элементов с нечётными индексами:", proizvedenie_neparnih)
+print()
+
+# Вариант 8
+print("=== Вариант 8 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(float(el))
+
+summa_vseh = 0
+for x in arr:
+    summa_vseh = summa_vseh + x
+
+proizvedenie_vseh = 1
+for x in arr:
+    proizvedenie_vseh = proizvedenie_vseh * x
+
+print("Сумма элементов:", summa_vseh)
+print("Произведение элементов:", proizvedenie_vseh)
+print()
+
+# Вариант 9
+print("=== Вариант 9 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(float(el))
+
+min_po_modulyu = abs(arr[0])
+min_chislo = arr[0]
+for chislo in arr:
+    if abs(chislo) < min_po_modulyu:
+        min_po_modulyu = abs(chislo)
+        min_chislo = chislo
+
+print("Минимальный по модулю элемент:", min_chislo)
+print()
+
+# Вариант 10
+print("=== Вариант 10 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(int(el))
+
+povtory = set()
+for chislo in arr:
+    skolko_raz = 0
+    for x in arr:
+        if x == chislo:
+            skolko_raz += 1
+    if skolko_raz > 1:
+        povtory.add(chislo)
+
+if len(povtory) > 0:
+    print("Повторяющиеся элементы:", povtory)
+else:
+    print("Повторяющихся элементов нет")
+print()
+
+# Вариант 11
+print("=== Вариант 11 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(int(el))
+
+chetnie = []
+for chislo in arr:
+    if chislo % 2 == 0:
+        chetnie.append(chislo)
+
+if len(chetnie) > 0:
+    maksimalniy_chetniy = chetnie[0]
+    for chislo in chetnie:
+        if chislo > maksimalniy_chetniy:
+            maksimalniy_chetniy = chislo
+    print("Наибольший чётный элемент:", maksimalniy_chetniy)
+else:
+    print("Чётных элементов нет")
+print()
+
+# Вариант 12
+print("=== Вариант 12 ===")
+vvod = input("Введите элементы массива: ")
+elementi = vvod.split()
+arr = []
+for el in elementi:
+    arr.append(int(el))
+
+neparnie = []
+for chislo in arr:
+    if chislo % 2 != 0:
+        neparnie.append(chislo)
+
+if len(neparnie) > 0:
+    minimalniy_neparniy = neparnie[0]
+    for chislo in neparnie:
+        if chislo < minimalniy_neparniy:
+            minimalniy_neparniy = chislo
+    print("Наименьший нечётный элемент:", minimalniy_neparniy)
+else:
+    print("Нечётных элементов нет")
+print()
+
+# Вариант 13
+print("=== Вариант 13 ===")
+arr = [1, 2, 3, 2, 4, 1, 5]
+
+povtory = {}
+i = 0
+while i < len(arr):
+    j = i + 1
+    while j < len(arr):
+        if arr[i] == arr[j]:
+            if arr[i] not in povtory:
+                povtory[arr[i]] = [i, j]
+            else:
+                if j not in povtory[arr[i]]:
+                    povtory[arr[i]].append(j)
+        j = j + 1
+    i = i + 1
+
+for chislo, pozicii in povtory.items():
+    print("Элемент", chislo, "повторяется на индексах", pozicii)
+print()
+
+# Вариант 14
+print("=== Вариант 14 ===")
+arr = [3, 7, 2, 9, 4]
+
+maks = arr[0]
+minim = arr[0]
+poziciya_maks = 0
+poziciya_minim = 0
+
+for i in range(len(arr)):
+    if arr[i] > maks:
+        maks = arr[i]
+        poziciya_maks = i
+    if arr[i] < minim:
+        minim = arr[i]
+        poziciya_minim = i
+
+arr[poziciya_maks], arr[poziciya_minim] = arr[poziciya_minim], arr[poziciya_maks]
+
+print("Массив после обмена:", arr)
+print()
+
+# Вариант 15
+print("=== Вариант 15 ===")
+data = [1, 3, 2, 3, 4, 1, 5]
+
+povtoryayushiesya = set()
+for chislo in data:
+    skolko_raz = 0
+    for x in data:
+        if x == chislo:
+            skolko_raz += 1
+    if skolko_raz > 1:
+        povtoryayushiesya.add(chislo)
+
+if len(povtoryayushiesya) > 0:
+    print("Повторяющиеся элементы:", povtoryayushiesya)
+else:
+    print("Повторяющихся элементов нет")
