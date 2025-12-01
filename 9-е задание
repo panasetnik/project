@@ -1,0 +1,208 @@
+# ===== Вариант 1 =====
+def variant1(matrix):
+    total_sum = 0
+    count = 0
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if i == j:
+                total_sum = total_sum + matrix[i][j]
+                count = count + 1
+
+    return total_sum, count
+
+
+# ===== Вариант 2 =====
+def variant2(matrix):
+    if len(matrix) == 0:
+        return False
+
+    s = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            s = s + matrix[i][j]
+
+    if s == 0:
+        return False
+    else:
+        return True
+
+
+# ===== Вариант 3 =====
+def variant3(matrix):
+    n = len(matrix)
+
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] != matrix[j][i]:
+                return False
+
+    return True
+
+
+# ===== Вариант 4 =====
+def variant4(matrix):
+    if matrix == []:
+        print("Матрица пустая")
+        return
+
+    max_sum = -999999999
+    max_row = 0
+
+    for i in range(len(matrix)):
+        s = 0
+        for j in range(len(matrix[i])):
+            s = s + matrix[i][j]
+
+        if s > max_sum:
+            max_sum = s
+            max_row = i
+
+    print("Строка:", max_row, "Сумма:", max_sum)
+    print(matrix[max_row])
+
+
+# ===== Вариант 5 =====
+def variant5(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i]) - 1):
+            for k in range(len(matrix[i]) - 1):
+                if matrix[i][k] > matrix[i][k + 1]:
+                    t = matrix[i][k]
+                    matrix[i][k] = matrix[i][k + 1]
+                    matrix[i][k + 1] = t
+
+
+# ===== Вариант 6 =====
+def variant6(matrix):
+    if len(matrix) == 0:
+        return
+
+    n = len(matrix[0])
+
+    for j in range(n):
+        smallest = matrix[0][j]
+        for i in range(len(matrix)):
+            if matrix[i][j] < smallest:
+                smallest = matrix[i][j]
+
+        print("Столбец", j, "минимум:", smallest)
+
+
+# ===== Вариант 7 =====
+def variant7(triangle):
+    size = len(triangle)
+    k = 0
+    matrix = []
+
+    for i in range(size):
+        row = []
+        for j in range(size):
+            row.append(triangle[k])
+            k = k + 1
+        matrix.append(row)
+
+    return matrix
+
+
+# ===== Вариант 8 =====
+def variant8(matrix, k):
+    if k < 0 or k >= len(matrix):
+        return
+
+    divider = matrix[k][0]
+    if divider == 0:
+        divider = 1
+
+    for j in range(len(matrix[k])):
+        matrix[k][j] = matrix[k][j] / divider
+
+
+# ===== Вариант 9 =====
+def variant9(matrix, k):
+    cnt = 0
+    biggest = None
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            num = matrix[i][j]
+            if num % k == 0:
+                cnt = cnt + 1
+                if biggest is None or num > biggest:
+                    biggest = num
+
+    return cnt, biggest
+
+
+# ===== Вариант 10 =====
+def variant10(matrix):
+    mx = None
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if mx is None or matrix[i][j] > mx:
+                mx = matrix[i][j]
+
+    return mx
+
+
+# ===== Вариант 11 =====
+def variant11(matrix):
+    sums = []
+
+    for i in range(len(matrix)):
+        s = 0
+        for j in range(len(matrix[i])):
+            s = s + matrix[i][j]
+        sums.append(s)
+
+    return sums
+
+
+# ===== Вариант 12 =====
+def variant12(matrix):
+    count = 0
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] < 0:
+                count = count + 1
+
+    return count
+
+
+# ===== Вариант 13 =====
+def variant13(matrix):
+    new = []
+
+    for i in range(len(matrix)):
+        row = []
+        for j in range(len(matrix[i])):
+            row.append(matrix[i][j] * matrix[i][j])
+        new.append(row)
+
+    return new
+
+
+# ===== Вариант 14 =====
+def variant14(matrix):
+    trans = []
+
+    for i in range(len(matrix[0])):
+        row = []
+        for j in range(len(matrix)):
+            row.append(matrix[j][i])
+        trans.append(row)
+
+    return trans
+
+
+# ===== Вариант 15 =====
+def variant15(matrix):
+    total = 0
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            total += matrix[i][j]
+
+    return total
