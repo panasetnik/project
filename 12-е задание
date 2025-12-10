@@ -7,3 +7,13 @@ def f(x, n):
 print(f(2, 3))
 
 #2222
+def find_max():
+    number = int(input())
+    if number == 0:
+        return 0
+    
+    current_max = find_max()
+    
+    return number if number > current_max else current_max
+
+print(find_max())
